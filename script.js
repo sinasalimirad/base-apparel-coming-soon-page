@@ -6,6 +6,7 @@ submit.addEventListener('click', () => {
     let check = /@gmail.com/;
     if (input.value.match(check) && input.value.length >= 18) {
         alert('Sent successful');
+        input.value = '';
     } else {
         for (let i = 0; i < errors.length; ++i) {
             errors[i].classList.add('show');
