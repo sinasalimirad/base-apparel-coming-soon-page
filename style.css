@@ -17,8 +17,15 @@
 body {
     font-size: var(1rem);
     font-family: 'Josefin Sans', sans-serif;
-    background: url(images/bg-pattern-desktop.svg), no-repeat center center/cover;
+    background: url(images/bg-pattern-desktop.svg) no-repeat center center/cover;
     max-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+}
+
+nav {
+    display: none;
+    padding: 2rem;
 }
 
 main {
@@ -27,7 +34,7 @@ main {
 }
 
 article {
-    padding: 4rem 8rem;
+    padding: 3rem 13rem;
     display: flex;
     flex-direction: column;
     gap: 5rem;
@@ -78,8 +85,11 @@ input {
     background-color: transparent;
     border-radius: 1.5rem;
     caret-color: var(--Desaturated-Red);
-    color: var(--Desaturated-Red);
+    color: var(--Dark-Grayish-Red);
+    font-family: 'Josefin Sans', sans-serif;
     position: relative;
+    font-weight: 700;
+    font-size: var(--Paragraph);
 }
 
 input::placeholder {
@@ -88,19 +98,93 @@ input::placeholder {
     color: var(--Desaturated-Red);
 }
 
+input.error {
+    border: 2px solid var(--Soft-Red);
+}
+
 form button {
     position: absolute;
     top: 50%;
-    right: -1px;
+    right: -1rem;
     transform: translateY(-51.5%);
-    padding: 0.8rem 2.4rem;
+    padding: 1rem 3rem;
     outline: none;
     background: linear-gradient(var(--Linear));
     border: none;
-    border-radius: 1.5rem;
+    border-radius: 2rem;
     cursor: pointer;
 }
 
 form button:hover {
     box-shadow: 0 0 16px 4px rgba(248, 191, 191, 0.8);
+}
+
+.invalid {
+    position: absolute;
+    display: none;
+}
+
+img.invalid {
+    top: 50%;
+    right: 6rem;
+    transform: translateY(-50%);
+}
+
+p.invalid {
+    color: var(--Soft-Red);
+    top: 100%;
+    font-size: calc(var(--Paragraph) * 0.85);
+    padding: 1rem 2rem;
+}
+
+.show {
+    display: block;
+}
+
+picture img {
+    height: 100vh;
+}
+
+@media (max-width: 1200px) {
+    article {
+        padding: 3rem 6rem;
+    }
+}
+
+@media (max-width: 992px) {
+    article {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 728px) {
+    body {
+        overflow-y: scroll;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    nav img {
+        width: 125px;
+    }
+
+    main {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    article {
+        padding: 4rem 2rem;
+    }
+
+    article > img {
+        display: none;
+    }
+
+    picture img {
+        width: 100%;
+        height: auto;
+    }
 }

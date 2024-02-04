@@ -11,9 +11,12 @@
 </head>
 
 <body>
+  <nav>
+    <img src="images/logo.svg">
+  </nav>
   <main>
     <article>
-      <img src="images/logo.svg" alt="">
+      <img src="images/logo.svg">
       <div class="content">
         <div class="title">
           <p>we're</p>
@@ -22,15 +25,17 @@
         <p class="text">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
         <div class="Email">
           <form>
-            <input input type="email" placeholder="Email Address">
-            <button submit><img src="images/icon-arrow.svg" alt="Submit"></button>
+            <input input type="text" placeholder="Email Address">
+            <button type="button" submit><img src="images/icon-arrow.svg"></button>
+            <img src="images/icon-error.svg" class="invalid" error>
+            <p class="invalid" error>Please provide a valid email</p>
           </form>
         </div>
       </div>
     </article>
     <picture>
       <source media="(min-width: 728px)" srcset="images\hero-desktop.jpg">
-      <img src="images/hero-mobile.jpg" alt="">
+      <img src="images/hero-mobile.jpg">
     </picture>
   </main>
   
